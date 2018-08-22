@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Simple Vue Demo</h1>
+<div id="app">
+    <input type="text" v-model="message">
+    <div v-text="message"></div>
+    <button @click="getMessage">Show Message</button>
+
+    <br>
+
+    <input type="text" v-model="message2">
+    <div v-text="message2"></div>
+    <button @click="getMessage2">Show Message2</button>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello, World',
+            message2: 'Hello, Kitty'
+        },
+        methods: {
+            getMessage: function() {
+                alert(this.message);
+            },
+            getMessage2: function() {
+                alert(this.message2);
+            }
+        }
+    });
+</script>
+</body>
+</html>
